@@ -14,6 +14,9 @@ public class Image {
     @Column(name = "file_name", nullable = false)
     private String filename;
 
+    @Column(name = "content_type")
+    private String contentType;
+
     @Column(name = "created_at")
     private Date createdAt;
 
@@ -30,6 +33,7 @@ public class Image {
 
     public Image(String filename, String contentType) {
         this.filename = filename;
+        this.contentType = contentType;
         this.createdAt = new Date();
         this.processedAt = null;
         this.enhancementApplied = false;
@@ -38,6 +42,10 @@ public class Image {
 
     public Long getId() {
         return id;
+    }
+
+    public String getContentType() {
+        return contentType;
     }
 
     public Date getCreatedAt() {
