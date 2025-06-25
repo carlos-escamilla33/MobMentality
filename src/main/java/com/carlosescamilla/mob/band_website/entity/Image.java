@@ -56,8 +56,6 @@ public class Image {
         return rejectionReason;
     }
 
-//    SETTERS
-
     public void setProcessedAt(Date processedAt) {
         this.processedAt = processedAt;
     }
@@ -70,6 +68,7 @@ public class Image {
         this.rejectionReason = rejectionReason;
     }
 
+    @Override
     public String toString() {
         return "Image [id=" + id + ", filename=" + filename + ", createdAt=" + createdAt + ", processedAt="+processedAt;
     }
