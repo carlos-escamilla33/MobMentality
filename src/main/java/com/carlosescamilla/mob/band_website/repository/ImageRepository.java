@@ -12,7 +12,8 @@ public interface ImageRepository extends JpaRepository<Image, Long> {
 
     // READ
     List<Image> findByContentType(String contentType);
-    List<Image> findByFilename(String filename);
+    Image findByFilename(String filename);
+    List<Image> findAll();
 
     // DELETE
     void deleteById(Long id);
