@@ -21,7 +21,12 @@ public class ImageService {
     public Image saveImage(MultipartFile file) {
         this.validateFile(file);
 
-        String filename = sanitizeFilename(file.getOriginalFilename());
+        String sanitizeFilename = sanitizeFilename(file.getOriginalFilename());
+
+        Image image = new Image(
+                sanitizeFilename,
+                file.getContentType()
+        );
 
         return imageRepository.save(image);
     }
